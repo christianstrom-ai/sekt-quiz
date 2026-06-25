@@ -270,93 +270,111 @@
 <script>
 const QUESTIONS = [
   {
-    q: "Hur ser en typisk söndagsförmiddag ut för dig när du själv får styra?",
+    q: "Vad är viktigast för dig i livet just nu?",
     options: [
-      ["A", "Jag gör i ordning ett rum så att det är tyst och avskilt, och försöker bara vara stilla utan att uppnå något särskilt."],
-      ["B", "Jag vill helst dela frukosten med andra och samtala medan vi äter, gärna länge."],
-      ["C", "Jag arbetar med något i hemmet — ett hantverk, en reparation, något fysiskt och hanterbart."],
-      ["D", "Jag läser eller skriver, helst om något som ligger bortom det vardagligt synliga."]
+      ["A", "Att hitta lugn med mig själv och slippa det som stressar."],
+      ["B", "Att ha människor omkring mig som jag verkligen hör hemma med."],
+      ["C", "Att göra något konkret med min tid — bygga, fixa, ta hand om."],
+      ["D", "Att förstå hur saker egentligen hänger ihop."]
     ]
   },
   {
-    q: "När du fattar ett viktigt beslut, vad väger tyngst?",
+    q: "Hur ser din perfekta semester ut?",
     options: [
-      ["A", "En inre känsla som dröjer kvar och som jag tolkar som en form av ledning."],
-      ["B", "Vad gruppen jag tillhör skulle komma fram till om vi pratade igenom det."],
-      ["C", "De konkreta konsekvenserna för det arbete och de människor som finns runt mig nu."],
-      ["D", "Hur beslutet förhåller sig till ett större mönster jag försöker förstå."]
+      ["A", "Ensam i en stuga, långt från folk. Mest tystnad och promenader."],
+      ["B", "Hyra ett stort hus med vänner och bara hänga i en vecka."],
+      ["C", "Bo på en gård utomlands, hjälpa till med djur eller skörd, äta vid samma bord varje kväll."],
+      ["D", "Resa till en plats med gammal historia och försöka känna in den."]
     ]
   },
   {
-    q: "Hur förhåller du dig till ägodelar?",
+    q: "Hur ser den perfekta dejten ut?",
     options: [
-      ["A", "Jag har få saker och försöker släppa även dem mentalt."],
-      ["B", "Det jag äger känns inte riktigt mitt — det fungerar bättre som gemensamt."],
-      ["C", "Mina verktyg och min arbetsplats är viktiga; resten betyder lite."],
-      ["D", "Föremål kan bära innebörd som vi inte direkt ser, så jag väljer dem omsorgsfullt."]
+      ["A", "En lång promenad i tystnad och sedan ett enkelt mål — utan stora ord."],
+      ["B", "Bjuda hem den andre på middag man lagat ihop, en hel kväll utan klocka."],
+      ["C", "Göra något fysiskt — vandra, plocka svamp, fixa något tillsammans."],
+      ["D", "Stå på en plats ni båda tycker är speciell och prata om varför."]
     ]
   },
   {
-    q: "Vilken roll spelar tystnad i din vardag?",
+    q: "Hur är du som vän?",
     options: [
-      ["A", "Tystnad är den viktigaste tiden på dygnet."],
-      ["B", "Tystnad uppstår naturligt mellan människor som känner varandra väl; den behöver inte sökas."],
-      ["C", "Tystnad är när arbetet flyter på utan avbrott."],
-      ["D", "Tystnad är ett tillstånd jag rör mig mot men sällan når fullständigt."]
+      ["A", "Jag har två-tre djupa relationer. Hör av mig sällan men finns där när det gäller."],
+      ["B", "Jag är limmet i gänget. Samlar folk, kollar in, ringer först."],
+      ["C", "Den som hjälper när någon flyttar, bygger något, behöver skjuts."],
+      ["D", "Den som ställer frågan ingen annan ställt, ofta lite för sent på kvällen."]
     ]
   },
   {
-    q: "Hur reagerar du om någon i din närhet uttrycker en åsikt du inte delar?",
+    q: "Hur är du på fest?",
     options: [
-      ["A", "Jag lyssnar, men det jag tänker själv förändras sällan av yttre röster."],
-      ["B", "Vi behöver komma fram till en gemensam hållning, även om det tar tid."],
-      ["C", "Åsikter är mindre viktiga än hur vi behandlar varandra i det dagliga."],
-      ["D", "Jag försöker förstå varifrån deras tolkning kommer, eftersom flera tolkningar ofta kan vara samtidigt giltiga."]
+      ["A", "Jag stannar inte länge. Tycker det är skönt att gå hem tidigt."],
+      ["B", "Jag är där för mina favoritmänniskor — pratar med samma 3-4 personer hela kvällen."],
+      ["C", "Hjälper i köket eller fixar något — trivs bättre där än bland alla andra."],
+      ["D", "Fastnar i ett djupt samtal med någon ny om något udda och sitter där hela kvällen."]
     ]
   },
   {
-    q: "Vad är din relation till mat och måltider?",
+    q: "Vad får dig att känna att du verkligen är hemma?",
     options: [
-      ["A", "Jag äter enkelt, ofta ensam, och försöker inte fästa för stor uppmärksamhet vid det."],
-      ["B", "Måltider är när vi blir en grupp igen; det är dagens viktigaste samling."],
-      ["C", "Maten ska helst komma från eget eller närliggande arbete."],
-      ["D", "Jag är uppmärksam på vad jag stoppar i mig eftersom kroppen är ett finstämt instrument."]
+      ["A", "En lugn, ren yta. Inget på väggarna. Det är dit jag går för att andas."],
+      ["B", "Köksstök i nästa rum och röster som man känner igen."],
+      ["C", "Lukten av jord och något som lagas på spisen."],
+      ["D", "Ett rum som följer en logik — färger, ljus, föremål — som man valt själv med omsorg."]
     ]
   },
   {
-    q: "Hur ser du på auktoritet?",
+    q: "Vad känner du när livet känns rörigt och stressigt?",
     options: [
-      ["A", "Den enda auktoritet jag erkänner är den inre."],
-      ["B", "Auktoritet bör utövas kollektivt, av en grupp äldre som lyssnar på varandra."],
-      ["C", "Den som arbetar mest med en viss sak bör också få bestämma om den."],
-      ["D", "Auktoritet kan finnas hos lärare som förmedlar en kunskap som annars skulle gå förlorad."]
+      ["A", "En tydlig längtan att dra mig undan, släcka allt, vara själv."],
+      ["B", "Behov av att prata med min närmaste och bestämma vägen tillsammans."],
+      ["C", "Behov av att rensa, sortera, fixa något konkret som faktiskt funkar."],
+      ["D", "Behov av att hitta tråden — vad är det egentligen som händer?"]
     ]
   },
   {
-    q: "När du tänker på den fysiska världen omkring dig, vilket påstående ligger närmast hur du faktiskt upplever den?",
+    q: "Hur viktiga är pengar för dig?",
     options: [
-      ["A", "Den är ett slags slöja; det viktiga finns bakom."],
-      ["B", "Den är platsen där vi prövas mot varandra och formas."],
-      ["C", "Den är konkret och rik och kräver vår omsorg, för det är den vi har."],
-      ["D", "Den är genomvävd av krafter och samband som inte är synliga men som kan kännas av den uppmärksamme."]
+      ["A", "Mindre och mindre. Jag försöker behöva mindre snarare än tjäna mer."],
+      ["B", "Mest viktiga när de gör att vi kan vara tillsammans utan stress."],
+      ["C", "Viktiga som ett medel — jag vill äga mina egna verktyg och min egen tid."],
+      ["D", "Inte särskilt. Men jag är medveten om att det finns hövligare sätt att uttrycka det."]
     ]
   },
   {
-    q: "Hur hanterar du osäkerhet om framtiden?",
+    q: "Vad skulle få dig att flytta utomlands?",
     options: [
-      ["A", "Jag försöker släppa frågan; oron tillhör en annan nivå än den jag vill vistas på."],
-      ["B", "Jag pratar med dem jag lever nära, och vi bestämmer oss tillsammans för hur vi går vidare."],
-      ["C", "Jag fokuserar på det jag kan göra i morgon, konkret."],
-      ["D", "Jag försöker tyda tecken och mönster för att förstå riktningen."]
+      ["A", "Att hitta en plats där livet är enklare och färre människor stör."],
+      ["B", "Att flytta med människor jag älskar — vart spelar mindre roll."],
+      ["C", "En riktig möjlighet — ett hus, en gård, ett yrke som väntar."],
+      ["D", "En idé eller tradition jag vill leva nära."]
     ]
   },
   {
-    q: "Vilket av följande närmar sig bäst din syn på det egna jaget?",
+    q: "Vad lockar dig mest i en bok eller serie?",
     options: [
-      ["A", "Det är en tunn yta som man helst ska se igenom."],
-      ["B", "Det blir verkligt först i relation till de andra man delar livet med."],
-      ["C", "Det visar sig i det man gör med sina händer."],
-      ["D", "Det är ett av flera lager, och de andra lagren är mer permanenta än det vi kallar 'jag'."]
+      ["A", "En enskild person som långsamt förändras inifrån."],
+      ["B", "En grupp som bygger något gemensamt och prövas av omvärlden."],
+      ["C", "En konkret värld där människor löser problem, lagar saker, överlever."],
+      ["D", "Ett mönster man inte ser direkt — berättelsen avslöjas gradvis."]
+    ]
+  },
+  {
+    q: "Tror du på ett liv efter döden?",
+    options: [
+      ["A", "Ja. Medvetandet upphör inte — det fortsätter någon annanstans."],
+      ["B", "Vi lever vidare i dem som mindes oss. Det räcker."],
+      ["C", "Tveksamt. Det jag vet är det jag ser här. Resten är gissningar."],
+      ["D", "Ja, men inte som ett 'ställe'. Mer som ett byte av form eller nivå."]
+    ]
+  },
+  {
+    q: "Tror du på Gud, eller någon högre makt?",
+    options: [
+      ["A", "Jag tror på något, men det går inte riktigt att namnge."],
+      ["B", "Jag tror på det som händer när människor är samlade. Det är min andlighet."],
+      ["C", "Inte direkt. Min hållning är ganska jordnära."],
+      ["D", "Ja. Inte den klassiska bilden — något mer mångfacetterat."]
     ]
   }
 ];
@@ -423,8 +441,8 @@ function renderIntro() {
       <p>Detta instrument är avsett att kartlägga individuella benägenheter avseende vardagsstruktur, social organisering och meningsskapande.</p>
       <p>Besvara frågorna utifrån hur du faktiskt brukar tänka och agera, inte hur du önskar att du gjorde. Det finns inga rätta svar.</p>
       <div class="meta-row">
-        <span><b>Antal frågor</b>10</span>
-        <span><b>Tidsåtgång</b>≈ 4 min</span>
+        <span><b>Antal frågor</b>12</span>
+        <span><b>Tidsåtgång</b>≈ 5 min</span>
         <span><b>Anonymt</b>Ja</span>
       </div>
       <button class="btn primary" id="start">Påbörja testet</button>
