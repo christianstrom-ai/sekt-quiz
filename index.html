@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#f5f1e8" />
+<title>Vilken sekt borde du joina? — Institutet för Komparativ Livsåskådningsforskning</title>
+<meta name="description" content="Ett validerat självskattningstest. Kartlägger benägenheter avseende vardagsstruktur, social organisering och meningsskapande." />
+<meta property="og:title" content="Vilken sekt borde du joina?" />
+<meta property="og:description" content="Självskattningstest från Institutet för Komparativ Livsåskådningsforskning. Formulär 4B-rev.2." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4eee2;
+    --paper: #faf6ec;
+    --ink: #1a1a1a;
+    --ink-soft: #4a4a4a;
+    --ink-faint: #888;
+    --line: #d8cfba;
+    --accent: #5a3e2b;
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .serif { font-family: 'EB Garamond', Georgia, serif; }
+  .container {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 24px 20px 40px;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+  }
+  .head {
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  .head .crest {
+    font-family: 'EB Garamond', serif;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 4px;
+  }
+  .head .formref {
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    font-family: 'Inter', sans-serif;
+    margin-top: 6px;
+  }
+  .progress {
+    height: 2px;
+    background: var(--line);
+    border-radius: 1px;
+    overflow: hidden;
+    margin-bottom: 28px;
+  }
+  .progress-bar {
+    height: 100%;
+    background: var(--accent);
+    width: 0%;
+    transition: width 0.4s cubic-bezier(.4,0,.2,1);
+  }
+  .step-label {
+    font-size: 11px;
+    color: var(--ink-faint);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+  h1.title {
+    font-family: 'EB Garamond', serif;
+    font-size: 30px;
+    line-height: 1.15;
+    font-weight: 500;
+    margin: 0 0 16px;
+    letter-spacing: -0.01em;
+  }
+  h2.q {
+    font-family: 'EB Garamond', serif;
+    font-size: 22px;
+    line-height: 1.3;
+    font-weight: 500;
+    margin: 0 0 24px;
+  }
+  .intro p {
+    color: var(--ink-soft);
+    margin: 0 0 14px;
+    font-size: 15px;
+  }
+  .intro .meta-row {
+    display: flex;
+    gap: 24px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-size: 12px;
+    color: var(--ink-faint);
+  }
+  .meta-row span b { color: var(--ink-soft); font-weight: 600; display: block; margin-bottom: 2px; }
+  .btn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    color: var(--ink);
+    padding: 16px 18px;
+    margin-bottom: 12px;
+    font-family: inherit;
+    font-size: 15px;
+    line-height: 1.45;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s, transform 0.05s;
+    position: relative;
+    padding-left: 44px;
+  }
+  .btn:hover { border-color: var(--accent); }
+  .btn:active { transform: scale(0.997); background: #f0e9d5; }
+  .btn .letter {
+    position: absolute;
+    left: 16px;
+    top: 16px;
+    font-family: 'EB Garamond', serif;
+    font-weight: 500;
+    color: var(--accent);
+    font-size: 15px;
+  }
+  .primary {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+    text-align: center;
+    padding: 16px 20px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    margin-top: 8px;
+  }
+  .primary:hover { border-color: var(--ink); background: #000; }
+  .ghost {
+    background: transparent;
+    border: 1px solid var(--line);
+    text-align: center;
+    color: var(--ink-soft);
+    padding: 12px 16px;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+  .footer-note {
+    margin-top: auto;
+    padding-top: 32px;
+    font-size: 11px;
+    color: var(--ink-faint);
+    line-height: 1.5;
+    font-style: italic;
+  }
+  /* Result page */
+  .result-tag {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 8px;
+  }
+  .result-title {
+    font-family: 'EB Garamond', serif;
+    font-size: 36px;
+    line-height: 1.1;
+    font-weight: 500;
+    margin: 0 0 8px;
+    letter-spacing: -0.01em;
+  }
+  .result-sub {
+    color: var(--ink-soft);
+    font-style: italic;
+    margin-bottom: 28px;
+    font-family: 'EB Garamond', serif;
+    font-size: 17px;
+  }
+  .result-body p {
+    margin: 0 0 16px;
+    color: var(--ink-soft);
+    font-size: 15px;
+    line-height: 1.65;
+  }
+  .result-body p strong { color: var(--ink); font-weight: 600; }
+  .tally {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin: 28px 0;
+    padding: 16px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+  }
+  .tally .cell {
+    text-align: center;
+    font-family: 'EB Garamond', serif;
+  }
+  .tally .cell .num {
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .tally .cell.dim .num { color: var(--ink-faint); }
+  .tally .cell .lbl {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    font-family: 'Inter', sans-serif;
+    margin-top: 2px;
+  }
+  .share-row {
+    display: flex;
+    gap: 8px;
+    margin-top: 24px;
+  }
+  .share-row > * { flex: 1; }
+  .fade-in { animation: fadeIn 0.35s ease-out; }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @media (max-width: 380px) {
+    h1.title { font-size: 26px; }
+    h2.q { font-size: 19px; }
+    .result-title { font-size: 30px; }
+    .container { padding: 20px 16px 32px; }
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="head">
+      <div class="crest">Institutet för Komparativ Livsåskådningsforskning</div>
+      <div class="serif" style="font-size:13px;color:var(--ink-soft);">Avdelningen för individuell inriktningsprofil</div>
+      <div class="formref" id="formref">Formulär 4B-rev.2</div>
+    </div>
+    <div class="progress" id="progress-wrap" style="display:none;">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+    <div id="step-label" class="step-label" style="display:none;"></div>
+    <div id="app"></div>
+    <div class="footer-note">
+      Detta instrument är framtaget för forskningsändamål och gör inga anspråk på prediktiv validitet utanför kontrollerad miljö. Resultatet är vägledande.
+    </div>
+  </div>
+
+<script>
+const QUESTIONS = [
+  {
+    q: "Hur ser en typisk söndagsförmiddag ut för dig när du själv får styra?",
+    options: [
+      ["A", "Jag gör i ordning ett rum så att det är tyst och avskilt, och försöker bara vara stilla utan att uppnå något särskilt."],
+      ["B", "Jag vill helst dela frukosten med andra och samtala medan vi äter, gärna länge."],
+      ["C", "Jag arbetar med något i hemmet — ett hantverk, en reparation, något fysiskt och hanterbart."],
+      ["D", "Jag läser eller skriver, helst om något som ligger bortom det vardagligt synliga."]
+    ]
+  },
+  {
+    q: "När du fattar ett viktigt beslut, vad väger tyngst?",
+    options: [
+      ["A", "En inre känsla som dröjer kvar och som jag tolkar som en form av ledning."],
+      ["B", "Vad gruppen jag tillhör skulle komma fram till om vi pratade igenom det."],
+      ["C", "De konkreta konsekvenserna för det arbete och de människor som finns runt mig nu."],
+      ["D", "Hur beslutet förhåller sig till ett större mönster jag försöker förstå."]
+    ]
+  },
+  {
+    q: "Hur förhåller du dig till ägodelar?",
+    options: [
+      ["A", "Jag har få saker och försöker släppa även dem mentalt."],
+      ["B", "Det jag äger känns inte riktigt mitt — det fungerar bättre som gemensamt."],
+      ["C", "Mina verktyg och min arbetsplats är viktiga; resten betyder lite."],
+      ["D", "Föremål kan bära innebörd som vi inte direkt ser, så jag väljer dem omsorgsfullt."]
+    ]
+  },
+  {
+    q: "Vilken roll spelar tystnad i din vardag?",
+    options: [
+      ["A", "Tystnad är den viktigaste tiden på dygnet."],
+      ["B", "Tystnad uppstår naturligt mellan människor som känner varandra väl; den behöver inte sökas."],
+      ["C", "Tystnad är när arbetet flyter på utan avbrott."],
+      ["D", "Tystnad är ett tillstånd jag rör mig mot men sällan når fullständigt."]
+    ]
+  },
+  {
+    q: "Hur reagerar du om någon i din närhet uttrycker en åsikt du inte delar?",
+    options: [
+      ["A", "Jag lyssnar, men det jag tänker själv förändras sällan av yttre röster."],
+      ["B", "Vi behöver komma fram till en gemensam hållning, även om det tar tid."],
+      ["C", "Åsikter är mindre viktiga än hur vi behandlar varandra i det dagliga."],
+      ["D", "Jag försöker förstå varifrån deras tolkning kommer, eftersom flera tolkningar ofta kan vara samtidigt giltiga."]
+    ]
+  },
+  {
+    q: "Vad är din relation till mat och måltider?",
+    options: [
+      ["A", "Jag äter enkelt, ofta ensam, och försöker inte fästa för stor uppmärksamhet vid det."],
+      ["B", "Måltider är när vi blir en grupp igen; det är dagens viktigaste samling."],
+      ["C", "Maten ska helst komma från eget eller närliggande arbete."],
+      ["D", "Jag är uppmärksam på vad jag stoppar i mig eftersom kroppen är ett finstämt instrument."]
+    ]
+  },
+  {
+    q: "Hur ser du på auktoritet?",
+    options: [
+      ["A", "Den enda auktoritet jag erkänner är den inre."],
+      ["B", "Auktoritet bör utövas kollektivt, av en grupp äldre som lyssnar på varandra."],
+      ["C", "Den som arbetar mest med en viss sak bör också få bestämma om den."],
+      ["D", "Auktoritet kan finnas hos lärare som förmedlar en kunskap som annars skulle gå förlorad."]
+    ]
+  },
+  {
+    q: "När du tänker på den fysiska världen omkring dig, vilket påstående ligger närmast hur du faktiskt upplever den?",
+    options: [
+      ["A", "Den är ett slags slöja; det viktiga finns bakom."],
+      ["B", "Den är platsen där vi prövas mot varandra och formas."],
+      ["C", "Den är konkret och rik och kräver vår omsorg, för det är den vi har."],
+      ["D", "Den är genomvävd av krafter och samband som inte är synliga men som kan kännas av den uppmärksamme."]
+    ]
+  },
+  {
+    q: "Hur hanterar du osäkerhet om framtiden?",
+    options: [
+      ["A", "Jag försöker släppa frågan; oron tillhör en annan nivå än den jag vill vistas på."],
+      ["B", "Jag pratar med dem jag lever nära, och vi bestämmer oss tillsammans för hur vi går vidare."],
+      ["C", "Jag fokuserar på det jag kan göra i morgon, konkret."],
+      ["D", "Jag försöker tyda tecken och mönster för att förstå riktningen."]
+    ]
+  },
+  {
+    q: "Vilket av följande närmar sig bäst din syn på det egna jaget?",
+    options: [
+      ["A", "Det är en tunn yta som man helst ska se igenom."],
+      ["B", "Det blir verkligt först i relation till de andra man delar livet med."],
+      ["C", "Det visar sig i det man gör med sina händer."],
+      ["D", "Det är ett av flera lager, och de andra lagren är mer permanenta än det vi kallar 'jag'."]
+    ]
+  }
+];
+
+const RESULTS = {
+  A: {
+    name: "Brahma Kumaris",
+    sub: "Din svarsprofil överensstämmer närmast med Brahma Kumaris.",
+    body: [
+      "Rörelsen grundades i Hyderabad, Sindh, 1937 av Lekhraj Kripalani, sedermera känd som Brahma Baba. Efter Indiens delning förlades huvudsätet till Mount Abu i Rajasthan, där det fortfarande ligger. Brahma Kumaris driver i dag studiecenter i drygt 110 länder.",
+      "Centralt i läran är att den egna själen är skild från kroppen och utgör en punkt av medvetande som existerar oberoende av den fysiska världen. Den dagliga praktiken organiseras kring <strong>raja yoga-meditation</strong>, vilken inleds klockan 04.00 med en gemensam timme kallad Amrit Vela. Medlemmar är ofta lakto-vegetarianer och avstår från alkohol, tobak och i celibatutövandets fall även sexuella relationer. Rörelsen leds huvudsakligen av kvinnor, vilket är ovanligt i sin historiska kontext.",
+      "Vardagen präglas av enkelhet, regelbundenhet och inre tillbakadragenhet. Den materiella världen betraktas som temporär; uppmärksamheten riktas mot det som ligger bortom den."
+    ]
+  },
+  B: {
+    name: "Bruderhof",
+    sub: "Din svarsprofil överensstämmer närmast med Bruderhof.",
+    body: [
+      "Bruderhof grundades 1920 i Sannerz, Tyskland, av teologen Eberhard Arnold och hans hustru Emmy som en kristen radikalpacifistisk gemenskap inspirerad av tidiga anabaptistiska traditioner och Bergspredikan. Efter förföljelse under nazitiden förlades verksamheten till England, Paraguay och därefter framför allt USA och Storbritannien, där rörelsen i dag har omkring tjugofem kommuniteter.",
+      "Medlemmar lever i <strong>fullständig egendomsgemenskap</strong>: ingen äger något privat, allt arbete och alla inkomster delas. Familjer bor i egna bostäder men måltider intas gemensamt. Rörelsen försörjer sig huvudsakligen genom egen tillverkning, bland annat av lekutrustning och hjälpmedel. Beslut fattas i samtal där konsensus eftersträvas, och äldre medlemmar väljs till lokala ledare.",
+      "Vardagen kretsar kring delade måltider, gemensamt arbete, sång och uppfostran av barn. Det inre livet uttrycks i hur man behandlar dem man lever nära, snarare än i avskild meditation."
+    ]
+  },
+  C: {
+    name: "Doukhoborerna",
+    sub: "Din svarsprofil överensstämmer närmast med Doukhoborerna.",
+    body: [
+      "Doukhoborerna ('andens brottare') uppstod i Ryssland under sent 1700-tal som en grupp bondeasketer som avvisade den ortodoxa kyrkans hierarki, ikoner och prästerskap. De ansåg att Gud bor inom varje människa och att yttre religiösa former därför är obehövliga. Efter omfattande förföljelse emigrerade omkring 7 500 doukhoborer 1899 till Saskatchewan i Kanada, delvis med ekonomiskt stöd från Lev Tolstoj, och deras ättlingar lever i dag huvudsakligen i British Columbia.",
+      "Rörelsen är pacifistisk, vegetarisk och historiskt strikt mot alkohol och tobak. Den präglas av <strong>kollektivt jordbruksarbete, handens kunnande och muntligt traderad sång</strong> — den så kallade <em>psalom</em>-traditionen, där hymner lärs in utan noter och förs vidare över generationer. Ledare har vid olika tidpunkter haft större eller mindre auktoritet; den dominerande tendensen är att den som arbetar med en sak också får ett ord med i den.",
+      "Vardagen är fysisk, jordnära och organiserad kring familj, gård och grannar. Den materiella världen behandlas inte som något att se igenom, utan som något att förvalta."
+    ]
+  },
+  D: {
+    name: "Antroposofisk kommunitet",
+    sub: "Din svarsprofil överensstämmer närmast med en antroposofisk kommunitet.",
+    body: [
+      "Antroposofin utvecklades från 1912 av den österrikiske filosofen Rudolf Steiner som en strömning ur teosofin, med ambitionen att vara en 'andlig vetenskap' — en systematisk undersökning av icke-sinnliga dimensioner av tillvaron. Rörelsens centrum är Goetheanum i Dornach, Schweiz. Antroposofiska kommuniteter finns spridda i Europa, Nord- och Sydamerika och tar sig i praktiken uttryck bland annat genom Waldorfpedagogiken, <strong>biodynamiskt jordbruk</strong>, antroposofisk medicin och Camphill-rörelsens boenden för personer med funktionsnedsättning.",
+      "Människan uppfattas som bestående av flera lager — fysiskt, eteriskt, astralt och jag — och utvecklingen genom upprepade jordeliv ses som en lärprocess. Materiella föremål, färger, former och rytmer betraktas som bärare av kvaliteter som påverkar det inre livet, varför vardagens estetik och rutiner ägnas omsorg.",
+      "Vardagen i en kommunitet präglas av årstidsfester, rytmiska dagsstrukturer, hantverk, jordbruk och studier av Steiners skrifter. Tonen är reflekterande snarare än extatisk; kunskap förmedlas genom lärare som anses ha gått en längre väg in i materien."
+    ]
+  }
+};
+
+let state = { step: -1, answers: [] };
+const app = document.getElementById('app');
+const progressWrap = document.getElementById('progress-wrap');
+const progressBar = document.getElementById('progress-bar');
+const stepLabel = document.getElementById('step-label');
+const formref = document.getElementById('formref');
+
+function setProgress(n) {
+  const total = QUESTIONS.length;
+  if (n < 0 || n >= total) { progressWrap.style.display = 'none'; stepLabel.style.display = 'none'; return; }
+  progressWrap.style.display = 'block';
+  stepLabel.style.display = 'block';
+  progressBar.style.width = ((n) / total * 100) + '%';
+  stepLabel.textContent = `Fråga ${n + 1} av ${total}`;
+}
+
+function renderIntro() {
+  app.innerHTML = `
+    <div class="intro fade-in">
+      <h1 class="title">Vilken sekt borde du joina?</h1>
+      <p>Detta instrument är avsett att kartlägga individuella benägenheter avseende vardagsstruktur, social organisering och meningsskapande.</p>
+      <p>Besvara frågorna utifrån hur du faktiskt brukar tänka och agera, inte hur du önskar att du gjorde. Det finns inga rätta svar.</p>
+      <div class="meta-row">
+        <span><b>Antal frågor</b>10</span>
+        <span><b>Tidsåtgång</b>≈ 4 min</span>
+        <span><b>Anonymt</b>Ja</span>
+      </div>
+      <button class="btn primary" id="start">Påbörja testet</button>
+    </div>`;
+  document.getElementById('start').onclick = () => { state.step = 0; render(); };
+}
+
+function renderQuestion() {
+  setProgress(state.step);
+  const q = QUESTIONS[state.step];
+  const opts = q.options.map(([letter, text]) => `
+    <button class="btn" data-letter="${letter}">
+      <span class="letter">${letter}</span>${text}
+    </button>`).join('');
+  app.innerHTML = `
+    <div class="fade-in" key="${state.step}">
+      <h2 class="q">${state.step + 1}. ${q.q}</h2>
+      ${opts}
+      ${state.step > 0 ? `<button class="btn ghost" id="back">← Föregående fråga</button>` : ''}
+    </div>`;
+  app.querySelectorAll('button[data-letter]').forEach(b => {
+    b.onclick = () => {
+      state.answers[state.step] = b.dataset.letter;
+      if (state.step < QUESTIONS.length - 1) {
+        state.step++;
+        render();
+      } else {
+        state.step = QUESTIONS.length;
+        render();
+      }
+    };
+  });
+  const back = document.getElementById('back');
+  if (back) back.onclick = () => { state.step--; render(); };
+}
+
+function tally() {
+  const t = { A: 0, B: 0, C: 0, D: 0 };
+  state.answers.forEach(a => t[a] = (t[a] || 0) + 1);
+  return t;
+}
+
+function pickWinner(t) {
+  const order = ['A', 'B', 'C', 'D'];
+  let best = order[0];
+  for (const k of order) if (t[k] > t[best]) best = k;
+  return best;
+}
+
+function renderResult() {
+  setProgress(-1);
+  formref.textContent = 'Resultatbedömning · 4B-rev.2';
+  const t = tally();
+  const winner = pickWinner(t);
+  const r = RESULTS[winner];
+  const cells = ['A', 'B', 'C', 'D'].map(k => `
+    <div class="cell ${k === winner ? '' : 'dim'}">
+      <div class="num">${t[k]}</div>
+      <div class="lbl">${k}</div>
+    </div>`).join('');
+  const bodyHtml = r.body.map(p => `<p>${p}</p>`).join('');
+  app.innerHTML = `
+    <div class="fade-in">
+      <div class="result-tag">Matchad rörelse</div>
+      <h1 class="result-title serif">${r.name}</h1>
+      <div class="result-sub">${r.sub}</div>
+      <div class="tally">${cells}</div>
+      <div class="result-body">${bodyHtml}</div>
+      <div class="share-row">
+        <button class="btn ghost" id="share">Dela resultat</button>
+        <button class="btn ghost" id="restart">Gör om testet</button>
+      </div>
+    </div>`;
+  document.getElementById('restart').onclick = () => {
+    state = { step: -1, answers: [] };
+    formref.textContent = 'Formulär 4B-rev.2';
+    render();
+  };
+  document.getElementById('share').onclick = async () => {
+    const text = `Min svarsprofil matchade ${r.name}. Vilken sekt borde du joina?`;
+    const url = location.href.split('?')[0];
+    if (navigator.share) {
+      try { await navigator.share({ title: 'Vilken sekt borde du joina?', text, url }); } catch(e) {}
+    } else {
+      try {
+        await navigator.clipboard.writeText(`${text}\n${url}`);
+        const b = document.getElementById('share');
+        const orig = b.textContent;
+        b.textContent = 'Länk kopierad';
+        setTimeout(() => b.textContent = orig, 2000);
+      } catch(e) {}
+    }
+  };
+}
+
+function render() {
+  if (state.step < 0) { formref.textContent = 'Formulär 4B-rev.2'; renderIntro(); }
+  else if (state.step < QUESTIONS.length) { renderQuestion(); window.scrollTo({ top: 0, behavior: 'instant' }); }
+  else renderResult();
+}
+
+render();
+</script>
+</body>
+</html>
